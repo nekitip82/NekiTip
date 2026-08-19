@@ -1,0 +1,6 @@
+
+
+V29
+---
+V29 je funkcionalno in grafično enaka V28.
+Namenjena je testiranju GitHub veje in Netlify Deploy Preview workflowa.
