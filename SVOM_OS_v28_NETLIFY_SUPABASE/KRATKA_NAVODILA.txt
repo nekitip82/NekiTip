@@ -1,0 +1,144 @@
+SVOM.OS v25 — kratka navodila za objavo
+
+1. SUPABASE
+- Odpri svoj Supabase projekt.
+- SQL Editor > New query.
+- Kopiraj in zaženi vsebino datoteke: supabase_setup_v25.sql
+
+2. CONFIG.JS
+- Odpri datoteko config.js.
+- Vpiši svoj Supabase Project URL.
+- Vpiši svoj Supabase Publishable/Anon key.
+- Ne uporabljaj service_role ključa.
+
+3. NETLIFY
+- Na Netlify ustvari novo stran ali odpri obstoječo.
+- Deploy / Add new site > Deploy manually.
+- Naloži VSEBINO te mape oziroma ZIP paket.
+- Glavna datoteka je index.html.
+
+4. PREVERI
+- Odpri objavljeno stran.
+- Preveri prijavo z inicialkami.
+- Dodaj testni zapis v Delovodnik.
+- Osveži stran in preveri, da zapis ostane.
+- Preveri tudi priponko in Načrt dela.
+
+V paketu:
+- index.html ........ produkcijska aplikacija
+- config.js ......... povezava na Supabase
+- supabase_setup_v25.sql ... baza + storage nastavitve
+- netlify.toml ...... Netlify nastavitve
+- README.txt ........ daljša pojasnila
+- SVOM_OS_v25_original_local.html ... lokalna rezervna kopija
+
+Nastavitve SVOM.OS: geslo 123
+
+ARSO WIDGET – POPRAVEK
+---------------------
+V tem paketu je dodana Netlify Function:
+  netlify/functions/arso.js
+
+ARSO widget zato ne kliče več ARSO XML neposredno iz brskalnika,
+ampak:
+  SVOM.OS -> Netlify Function -> ARSO
+
+To odpravi običajno CORS težavo.
+
+Za posodobitev na Netlify ponovno objavi CELOTNO vsebino tega paketa,
+ne samo index.html, ker je potrebna tudi mapa netlify/functions.
+
+Po objavi lahko preveriš:
+  https://TVOJA-DOMENA/.netlify/functions/arso?src=coast
+
+Če vidiš XML, proxy deluje.
+
+
+STATUS POVEZAVE
+---------------
+Sporočilo »CENTRALNO — povezano s Supabase« ni več prikazano na glavni strani.
+Status povezave je v:
+  Nastavitve -> Povezava s Supabase
+
+Napaka povezave se še vedno pokaže tudi na glavni strani, ker zahteva ukrepanje.
+
+
+MOBILE FIX
+----------
+- Supabase status je zdaj majhen tekst neposredno pod gumbom Nastavitve.
+- Na telefonu je glava kompaktnejša in se umakne med drsenjem.
+- ARSO ostane viden; Pelagus iframe se na telefonu skrije.
+- Jezički ostanejo sticky na vrhu in se premikajo vodoravno s potegom.
+- Obrazci so enostolpčni.
+- Koledar Načrta dela se drsi vodoravno, da ostane 7-dnevna struktura.
+- Nastavitve in druga modalna okna so prilagojena celozaslonskemu telefonu.
+- Zemljevid ima prilagojeno višino in gumbe v 2 stolpcih.
+
+Na Netlify ponovno objavi CELOTNO vsebino ZIP paketa.
+
+
+GLAVNI TRAK SUPABASE
+--------------------
+- Trak/status pri Delovodniku je popolnoma skrit.
+- Status povezave ostaja samo kot majhen tekst pod gumbom Nastavitve.
+- Tudi ob napaki se trak pri Delovodniku ne prikaže; status je v glavi pod Nastavitve.
+
+V26 – NASTAVITVE IN TELEFON
+---------------------------
+Nastavitve so zdaj organizirane:
+1. Splošna konfiguracija
+2. Načrt dela
+3. Delovodnik
+4. Izplovitve
+5. Navodila
+6. ISO 9001
+7. Koristne povezave
+8. Imenik
+9. Oprema
+10. Zemljevid
++ vsi naknadno dodani segmenti.
+
+Za vsak segment lahko urejaš:
+- naziv,
+- opis,
+- pomožno sporočilo,
+- polja,
+- obvezna polja,
+- postavitev (kjer je podprta).
+
+TELEFON:
+- polja za vnos so prisilno enostolpčna in vidna,
+- padajoči seznami in ura uporabljajo na telefonu native kontrolnike,
+- vizualni pickerji ostanejo na računalniku,
+- glava nima več gumba »+ Nov vnos«.
+
+Na Netlify objavi CELOTNO vsebino ZIP paketa.
+
+V28 – POPOLNOMA NOV KONCEPT NASTAVITEV
+--------------------------------------
+V27 je opuščen.
+
+Nastavitve se zdaj odprejo kot pregledna začetna stran:
+- velika kartica Splošna konfiguracija,
+- pod njo kartice vseh segmentov.
+
+Splošna konfiguracija ima samo 3 zavihke:
+- Šifranti
+- Nov segment
+- Podatki
+
+Posamezni segment ima samo 4 zavihke:
+- Osnovno
+- Polja
+- Obvezna
+- Postavitev
+
+Naenkrat je prikazan samo en sklop nastavitev.
+
+Na telefonu:
+- segmenti so prikazani kot enostolpčen seznam kartic,
+- zavihki so vodoravni,
+- vse kontrole so velike in vidne,
+- brez leve navigacije.
+
+Na Netlify objavi CELOTNO vsebino ZIP paketa.
